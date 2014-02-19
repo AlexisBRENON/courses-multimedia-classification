@@ -42,13 +42,13 @@ void histogramRelease(Histogram* histo)
 	
 	assert(histo != NULL);
 
-	for (i = 0; i < (*histo)->bin; i++)
+	for (i = 0; i < histo->bin; i++)
 	{
-		for (j = 0; j < (*histo)->bin; j++)
+		for (j = 0; j < histo->bin; j++)
 		{
-			free((*histo)->values[i][j]);
+			free(histo->values[i][j]);
 		}
-		free((*histo)->values[i]);
+		free(histo->values[i]);
 	}
 }
 
